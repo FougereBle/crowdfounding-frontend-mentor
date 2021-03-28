@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container mx-auto px-6">
+    <single-product
+      :product="product"
+      @onPledgeSuccess="onPledgeSuccess"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import productData from "@/data/product";
+
+import SingleProduct from "@/components/products/single-product.vue";
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
+    SingleProduct
+  },
+  data() {
+    return {
+      product: productData
+    };
+  },
+  methods: {
+    onPledgeSuccess(amount) {
+      this.product.goal.backed += parseInt(amount);
+      this.product.goal.backers += 1;
+    }
   }
-}
+};
 </script>
