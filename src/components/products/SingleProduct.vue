@@ -3,6 +3,7 @@
     <product-header
       :product="product"
       class="mb-6"
+      @onBackProject="onBackProject"
     />
     <product-goal
       :product="product"
@@ -30,7 +31,10 @@
         Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
         the world?
       </p>
-      <selectable-pledges-list :pledges="product.pledges" />
+      <selectable-pledges-list
+        :pledges="product.pledges"
+        :selected-pledge="selectedPledge"
+      />
     </popup>
   </div>
 </template>
@@ -68,6 +72,10 @@ export default {
     };
   },
   methods: {
+    onBackProject() {
+      this.pledgePopup = true;
+      this.selectedPledge = null;
+    },
     onSelectPledge(pledge) {
       this.pledgePopup = true;
       this.selectedPledge = pledge;

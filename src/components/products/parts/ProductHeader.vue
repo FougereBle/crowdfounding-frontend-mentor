@@ -14,7 +14,10 @@
       </p>
     </div>
     <div class="mt-4 flex justify-between items-center">
-      <button class="button primary">
+      <button
+        class="button primary"
+        @click="backProject"
+      >
         Back this project
       </button>
       <button>
@@ -33,6 +36,11 @@ export default {
     product: {
       type: Object,
       default: null
+    }
+  },
+  methods: {
+    backProject() {
+      this.$emit("onBackProject");
     }
   }
 };

@@ -1,6 +1,11 @@
 <template>
   <div>
-    Selectable Pledges List Here
+    <div>
+      <pre>{{ pledges }}</pre>
+    </div>
+    <div>
+      <pre>{{ selectedPledge }}</pre>
+    </div>
   </div>
 </template>
 
@@ -10,6 +15,10 @@ export default {
     pledges: {
       type: Array,
       default: () => []
+    },
+    selectedPledge: {
+      type: Object,
+      default: null
     }
   }
 };
