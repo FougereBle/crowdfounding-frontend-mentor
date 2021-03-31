@@ -14,7 +14,6 @@
       class="mb-6"
       @onSelectPledge="onSelectPledge"
     />
-
     <popup v-model="pledgePopup">
       <div class="flex justify-between items-center">
         <h3 class="font-bold text-lg">
@@ -33,7 +32,7 @@
       </p>
       <selectable-pledges-list
         :pledges="product.pledges"
-        :selected-pledge="selectedPledge"
+        :preselected-pledge="selectedPledge"
       />
     </popup>
   </div>

@@ -25,6 +25,11 @@ body {
   @apply opacity-50;
 }
 
+.pledge-card.selected {
+  @apply border-cyan;
+  @apply border-2;
+}
+
 .button {
   @apply rounded-full;
   @apply inline-block;
