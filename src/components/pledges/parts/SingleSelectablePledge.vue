@@ -6,6 +6,7 @@
     <div class="flex items-center">
       <button
         class="flex justify-center items-center w-6 h-6 rounded-full border border-moderate-gray"
+        :disabled="outOfStock"
         @click="selectPledge"
       >
         <span
@@ -59,6 +60,10 @@ export default {
   },
   methods: {
     selectPledge() {
+      if (this.outOfStock) {
+        return;
+      }
+
       this.$emit("input", this.pledge);
     }
   }
