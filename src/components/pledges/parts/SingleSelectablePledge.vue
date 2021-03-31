@@ -23,7 +23,6 @@
         </p>
       </div>
     </div>
-
     <p class="mt-6 text-gray">
       {{ pledge.body }}
     </p>
@@ -34,6 +33,35 @@
       <span class="text-gray ml-2">
         left
       </span>
+    </div>
+    <div
+      v-if="isSelected"
+      class="mt-6"
+    >
+      <div class="h-px bg-moderate-gray -ml-6 -mr-6" />
+      <p class="text-center mt-6 text-gray">
+        Enter your pledge
+      </p>
+      <div class="mt-4 flex items-center">
+        <div
+          class="flex-shrink border border-moderate-gray rounded-full px-6 py-4 flex"
+        >
+          <span class="font-bold text-gray">
+            $
+          </span>
+          <input
+            v-model="amount"
+            type="text"
+            class="ml-2 font-bold w-full"
+          >
+        </div>
+        <button
+          class="flex-shrink button primary small ml-4"
+          @click="makePledge"
+        >
+          Continue
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -50,11 +78,20 @@ export default {
       default: null
     }
   },
+  data() {
+    return {
+      amount: this.pledge.min
+    };
+  },
   computed: {
     outOfStock() {
       return this.pledge.left === 0;
     },
     isSelected() {
+      if (this.outOfStock) {
+        return false;
+      }
+
       return this.value && this.value.id === this.pledge.id;
     }
   },
@@ -65,6 +102,9 @@ export default {
       }
 
       this.$emit("input", this.pledge);
+    },
+    makePledge() {
+      this.$emit("onMakePledge", this.pledge, this.amount);
     }
   }
 };

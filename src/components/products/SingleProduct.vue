@@ -33,6 +33,7 @@
       <selectable-pledges-list
         :pledges="product.pledges"
         :preselected-pledge="selectedPledge"
+        @onMakePledge="onMakePledge"
       />
     </popup>
   </div>
@@ -78,11 +79,13 @@ export default {
     onSelectPledge(pledge) {
       this.pledgePopup = true;
       this.selectedPledge = pledge;
-      // this.makePledge(this.product, pledge);
     },
     onClosePledgePopup() {
       this.pledgePopup = false;
       this.selectedPledge = null;
+    },
+    onMakePledge(pledge, amount) {
+      this.makePledge(this.product, pledge, amount);
     }
   }
 };

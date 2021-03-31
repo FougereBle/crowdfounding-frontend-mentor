@@ -6,6 +6,7 @@
       v-model="selectedPledge"
       :pledge="pledge"
       class="mt-6"
+      @onMakePledge="onMakePledge"
     />
   </div>
 </template>
@@ -31,6 +32,11 @@ export default {
     return {
       selectedPledge: this.preselectedPledge
     };
+  },
+  methods: {
+    onMakePledge(pledge, amount) {
+      this.$emit("onMakePledge", pledge, amount);
+    }
   }
 };
 </script>

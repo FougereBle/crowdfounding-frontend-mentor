@@ -39,6 +39,15 @@ body {
   font-size: 16px;
 }
 
+.button.small {
+  @apply rounded-full;
+  @apply inline-block;
+  @apply py-4;
+  @apply px-6;
+  @apply font-bold;
+  font-size: 16px;
+}
+
 .button.primary {
   @apply bg-cyan;
   @apply text-white;
