@@ -8,7 +8,10 @@
       v-html="product.body"
     />
     <div class="mt-3">
-      <pledges-list :pledges="product.pledges" />
+      <pledges-list
+        :pledges="product.pledges"
+        @onSelectPledge="onSelectPledge"
+      />
     </div>
   </div>
 </template>
@@ -24,6 +27,11 @@ export default {
     product: {
       type: Object,
       default: null
+    }
+  },
+  methods: {
+    onSelectPledge(pledge) {
+      this.$emit("onSelectPledge", pledge);
     }
   }
 };

@@ -5,6 +5,7 @@
       :key="pledge.id"
       :pledge="pledge"
       class="mt-6"
+      @onSelectPledge="onSelectPledge"
     />
   </div>
 </template>
@@ -20,6 +21,11 @@ export default {
     pledges: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    onSelectPledge(pledge) {
+      this.$emit("onSelectPledge", pledge);
     }
   }
 };

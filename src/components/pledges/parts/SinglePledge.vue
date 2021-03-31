@@ -24,6 +24,7 @@
       <button
         v-if="!outOfStock"
         class="button primary"
+        @click="selectPledge"
       >
         Select Reward
       </button>
@@ -49,6 +50,11 @@ export default {
   computed: {
     outOfStock() {
       return this.pledge.left === 0;
+    }
+  },
+  methods: {
+    selectPledge() {
+      this.$emit("onSelectPledge", this.pledge);
     }
   }
 };
