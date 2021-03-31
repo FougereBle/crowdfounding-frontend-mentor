@@ -8,6 +8,7 @@ module.exports = {
         "dark-cyan": "#147A73",
         "light-cyan": "rgba(20, 122, 115, 0.05)",
         gray: "#7A7A7A",
+        "moderate-gray": "rgba(0, 0, 0, 0.15)",
         "light-gray": "rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {

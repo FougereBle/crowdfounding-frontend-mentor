@@ -13,6 +13,18 @@ body {
   @apply p-6;
 }
 
+.pledge-card {
+  @apply border;
+  @apply border-moderate-gray;
+  @apply bg-white;
+  @apply rounded-lg;
+  @apply p-6;
+}
+
+.pledge-card.disabled {
+  @apply opacity-50;
+}
+
 .button {
   @apply rounded-full;
   @apply inline-block;
@@ -25,4 +37,8 @@ body {
 .button.primary {
   @apply bg-cyan;
   @apply text-white;
+}
+
+.button:disabled {
+  @apply bg-gray;
 }
