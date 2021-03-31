@@ -1,16 +1,12 @@
 <template>
   <div class="container mx-auto px-6">
-    <single-product
-      :product="product"
-      @onPledgeSuccess="onPledgeSuccess"
-    />
+    <single-product :product="product" />
   </div>
 </template>
 
 <script>
 import productData from "@/data/product";
-
-import SingleProduct from "@/components/products/single-product.vue";
+import SingleProduct from "@/components/products/SingleProduct.vue";
 
 export default {
   components: {
@@ -20,12 +16,6 @@ export default {
     return {
       product: productData
     };
-  },
-  methods: {
-    onPledgeSuccess(amount) {
-      this.product.goal.backed += parseInt(amount);
-      this.product.goal.backers += 1;
-    }
   }
 };
 </script>

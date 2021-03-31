@@ -3,17 +3,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      fontSize: {
-        base: "16px",
-      },
       colors: {
-        "moderate-cyan": "hsl(176, 50%, 47%)",
-        "dark-cyan": "hsl(176, 72%, 28%)",
-        black: "hsl(0, 0%, 0%)",
-        "dark-grey": "hsl(0, 0%, 48%)",
+        cyan: "#3CB3AB",
+        "dark-cyan": "#147A73",
+        "light-cyan": "rgba(20, 122, 115, 0.05)",
+        gray: "#7A7A7A",
+        "light-gray": "rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {
-        body: ["Commissioner", "sans-serif"],
+        commissioner: ["Commissioner", "sans-serif"],
       },
     },
   },
