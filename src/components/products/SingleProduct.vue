@@ -36,6 +36,33 @@
         @onMakePledge="onMakePledge"
       />
     </popup>
+    <popup v-model="successPopup">
+      <div
+        class="w-16 h-16 flex justify-center items-center mx-auto bg-cyan rounded-full"
+      >
+        <check-icon
+          :width="32"
+          :height="32"
+          color="white"
+        />
+      </div>
+      <h2 class="font-bold text-lg text-center mt-6">
+        Thanks for your support!
+      </h2>
+      <p class="text-center text-gray mt-6">
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo
+        Monitor Riser worldwide. You will get an email once our campaign is
+        completed.
+      </p>
+      <div class="text-center">
+        <button
+          class="button primary mt-8"
+          @click="closeSuccessPopup"
+        >
+          Got it!
+        </button>
+      </div>
+    </popup>
   </div>
 </template>
 
@@ -48,6 +75,7 @@ import ProductBody from "@/components/products/parts/ProductBody.vue";
 import SelectablePledgesList from "@/components/pledges/SelectablePledgesList.vue";
 import Popup from "@/components/general/Popup.vue";
 import CloseIcon from "@/components/icons/CloseIcon.vue";
+import CheckIcon from "@/components/icons/CheckIcon.vue";
 
 export default {
   components: {
@@ -56,7 +84,8 @@ export default {
     ProductBody,
     SelectablePledgesList,
     Popup,
-    CloseIcon
+    CloseIcon,
+    CheckIcon
   },
   mixins: [pledgeMixin],
   props: {
@@ -68,7 +97,8 @@ export default {
   data() {
     return {
       pledgePopup: false,
-      selectedPledge: null
+      selectedPledge: null,
+      successPopup: false
     };
   },
   methods: {
@@ -86,6 +116,12 @@ export default {
     },
     onMakePledge(pledge, amount) {
       this.makePledge(this.product, pledge, amount);
+      this.pledgePopup = false;
+      this.selectedPledge = null;
+      this.successPopup = true;
+    },
+    closeSuccessPopup() {
+      this.successPopup = false;
     }
   }
 };
