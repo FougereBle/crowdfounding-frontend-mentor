@@ -5,12 +5,22 @@ body {
   font-size: 14px;
 }
 
+.container {
+  max-width: 730px;
+}
+
 .card {
   @apply border;
   @apply border-light-gray;
   @apply bg-white;
   @apply rounded-lg;
   @apply p-6;
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply p-12;
+  }
 }
 
 .pledge-card {
@@ -69,4 +79,5 @@ body {
   @apply m-auto;
   @apply px-6;
   @apply py-28;
+  max-width: 730px;
 }

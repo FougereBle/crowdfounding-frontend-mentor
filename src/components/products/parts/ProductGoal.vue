@@ -1,7 +1,7 @@
 <template>
   <div class="card">
-    <div class="text-center">
-      <div class="pt-2 pb-6">
+    <div class="text-center md:flex md:items-center md:text-left">
+      <div class="pt-2 pb-6 md:p-0 md:w-full">
         <span class="block text-4xl font-bold">
           ${{ product.goal.backed }}
         </span>
@@ -9,8 +9,10 @@
           of ${{ product.goal.goal }} backed
         </span>
       </div>
-      <div class="mx-auto w-20 h-px bg-black opacity-10" />
-      <div class="py-6">
+      <div
+        class="mx-auto w-20 h-px bg-black opacity-10 md:h-20 md:w-px md:mx-12"
+      />
+      <div class="py-6 md:p-0 md:w-full">
         <span class="block text-4xl font-bold">
           {{ product.goal.backers }}
         </span>
@@ -18,8 +20,10 @@
           total backers
         </span>
       </div>
-      <div class="mx-auto w-20 h-px bg-black opacity-10" />
-      <div class="pt-6 pb-8">
+      <div
+        class="mx-auto w-20 h-px bg-black opacity-10 md:h-20 md:w-px md:mx-12"
+      />
+      <div class="pt-6 pb-8 md:p-0 md:w-full">
         <span class="block text-4xl font-bold">
           {{ product.goal.daysLeft }}
         </span>
@@ -28,7 +32,7 @@
         </span>
       </div>
     </div>
-    <div>
+    <div class="md:mt-10">
       <div class="bg-light-gray rounded-full h-3">
         <div
           class="bg-cyan rounded-full h-3"
