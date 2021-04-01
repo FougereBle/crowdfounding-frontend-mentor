@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    class="font-body"
-  >
+  <div id="app">
     <r-header />
     <router-view />
   </div>
