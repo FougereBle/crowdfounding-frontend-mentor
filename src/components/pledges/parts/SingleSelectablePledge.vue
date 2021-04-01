@@ -64,6 +64,7 @@
               v-model="amount"
               type="text"
               class="ml-2 font-bold w-full"
+              size="4"
             >
           </div>
           <button

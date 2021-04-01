@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <r-header />
+    <main-header />
     <router-view />
   </div>
 </template>
@@ -9,11 +9,11 @@
 import "./assets/css/tailwind.css";
 import "./assets/css/style.css";
 
-import RHeader from "@/components/design/r-header.vue";
+import MainHeader from "@/components/design/MainHeader.vue";
 
 export default {
   components: {
-    RHeader
+    MainHeader
   }
 };
 </script>

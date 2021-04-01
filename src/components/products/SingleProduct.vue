@@ -2,7 +2,7 @@
   <div>
     <product-header
       :product="product"
-      class="mb-6"
+      class="mb-6 relative -mt-12 md:-mt-24"
       @onBackProject="onBackProject"
     />
     <product-goal

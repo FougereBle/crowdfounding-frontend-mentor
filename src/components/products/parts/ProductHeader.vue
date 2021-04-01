@@ -1,5 +1,5 @@
 <template>
-  <div class="card relative -mt-12">
+  <div class="card">
     <div class="text-center">
       <img
         src="../../../assets/images/logo-mastercraft.svg"
@@ -20,14 +20,31 @@
       >
         Back this project
       </button>
-      <button class="flex items-center rounded-full bg-light-gray">
+      <button
+        v-if="!bookmarked"
+        class="flex items-center rounded-full bg-light-gray"
+        @click="toggleBookmark"
+      >
         <img
           src="../../../assets/images/icon-bookmark.svg"
           alt="Bookmark"
         >
-        <span
-          class="hidden md:block ml-4 mr-6 font-bold text-gray"
-        >Bookmark</span>
+        <span class="hidden md:block ml-4 mr-6 font-bold text-gray">
+          Bookmark
+        </span>
+      </button>
+      <button
+        v-if="bookmarked"
+        class="flex items-center rounded-full bg-light-cyan"
+        @click="toggleBookmark"
+      >
+        <img
+          src="../../../assets/images/icon-bookmarked.svg"
+          alt="Bookmark"
+        >
+        <span class="hidden md:block ml-4 mr-6 font-bold text-dark-cyan">
+          Bookmarked
+        </span>
       </button>
     </div>
   </div>
@@ -41,9 +58,17 @@ export default {
       default: null
     }
   },
+  data() {
+    return {
+      bookmarked: false
+    };
+  },
   methods: {
     backProject() {
       this.$emit("onBackProject");
+    },
+    toggleBookmark() {
+      this.bookmarked = !this.bookmarked;
     }
   }
 };
