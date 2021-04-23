@@ -1,0 +1,11 @@
+---
+application:
+  name: "crowdfounding-frontend-mentor"
+  project: "testtest"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-crowdfounding-frontend-mentor"
+  routes:
+  - application_name: "crowdfounding-frontend-mentor"
+    paths:
+    - "/*"
